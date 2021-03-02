@@ -34,11 +34,6 @@ for my personal purpose the cut image has to be 1000x300, but you can easily cha
 
 
 
-
-
-
-
-
 3. Write the image to be processed by the features extraction routine.
 
 
@@ -47,5 +42,31 @@ for my personal purpose the cut image has to be 1000x300, but you can easily cha
 ## Calib routine
 
 
+That routine is dedicated to corners position extraction. The main function is GoodFeaturesToTrack from the OpenCV library, not much to say about the fantastic function. 
+
+Corners extracted with GoodFeaturesToTrack are then filtered with some functions i wrote.
+
+1. **dust_filter**: Filter corners not on the edges of the image with a control on the medium color of pixels contained on the (n,n) block centered on the corner.
+
+
+ 2. **baricentroids_filter**: this function construct 2 rectangles centered on the corner position, one for each direction (N-S, E-W). Those areas are used to check other corners positions. No corner is allowed to live on those areas.
+
+3. **top_border_filter**: Filter corners closer that a distance (maxdistance) to the top white line. Euclidean norm used.
+
+
+Then the routine works on the reconstructed position of corners usind "deltas" used early to construct the green line on the second point of align routine. That is useful to assign every corner to a square's raw.
+
+
+That's the final positions:
+
+
+
+
+
+![](/images/Final_corner_positions_screenshot.png)
+
+
+
+Top-right there's a corner that has not been filterd, i know. I'm still working on the code and i'll update the results.
 
 
