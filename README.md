@@ -2,7 +2,7 @@
 
 This code features functions that allows you to load a raw full-frame 1280x800 calibration image like this:
 
-![](/images/right_raw.bmp)
+![](/images/right_tilted.bmp)
 
 
 
@@ -18,7 +18,7 @@ The functions grouped in **align** prepares the image for the features extractio
 
 
 
-![](/images/right_tilted.bmp)
+![](/images/right_tilted_cropped.BMP)
 
 
 
