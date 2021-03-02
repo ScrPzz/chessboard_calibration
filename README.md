@@ -2,7 +2,7 @@
 
 This code features functions that allows you to load a raw full-frame 1280x800 calibration image like this:
 
-![Raw calib img](/images/raw_right.bmp)
+![](/images/right_raw.bmp)
 
 
 
